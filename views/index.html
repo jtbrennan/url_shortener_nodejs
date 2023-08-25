@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>URL Shortener Microservice | freeCodeCamp.org</title>
+  <link rel="icon" type="image/png" href="https://cdn.freecodecamp.org/universal/favicons/favicon-16x16.png" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .input-group {
+      padding: 1em;
+    }
+    section {
+      margin: 0 auto;
+      width: 80%;
+    }
+    footer {
+      border-top: 1px #ECECEC solid;
+      margin: 1em;
+      padding: 0.5em;
+    }
+  </style>
+</head>
+<body>
+  <header class="page-header text-center">
+    <h1>URL Shortener</h1>
+    <small></small>
+  </header>
+  <section class="mt-4">
+    <form action="api/shorturl" method="POST">
+      <div class="input-group">
+        <input type="text" class="form-control" name="url" id="url_input" placeholder="Enter URL">
+        <span class="input-group-btn">
+          <button class="btn btn-primary" value="POST URL" type="submit" type="button" id="short-btn">Make a short URL</button>
+        </span>
+      </div>
+      <div class="input-group mt-2">
+        <input type="text" class="form-control" value="https://urlshortener.johnnyt001.repl.co/api/shorturl/" id="shortened-url" readonly>
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button" id="copy-btn">Copy</button>
+        </span>
+      </div>
+    </form>
+  </section>
+  <section class="content mt-4">
+    <h3>API</h3>
+    <p>
+      The API endpoints below are available. The number goes at the end of https://urlshortener.johnnyt001.repl.co/api/shorturl/ .
+    </p>
+    <h4>POST /api/shorturl</h4>
+    <p>
+      Create a shorter URL.
+    </p>
+    <h5>Request</h5>
+    <p>
+      To obtain a short URL make a POST request with a JSON payload. The <strong>url</strong> key must be included and its value set to the URL you want shortened.
+    </p>
+    <pre>
+When you visit /api/shorturl/<short_url>, you will be redirected to the shortened URL.
+    </pre>
+    <h5>Response</h5>
+    <p>
+      The response includes both the <strong>original URL</strong>/ and the <strong>parameter</strong>. An Example is Below.
+    </p>
+    <pre>
+{ original_url : 'https://freeCodeCamp.org', short_url : 1}
+    </pre>
+  </section>
+  <footer class="text-center mt-4">
+    Crafted by John Brennan
+  </footer>
+</body>
+</html>
